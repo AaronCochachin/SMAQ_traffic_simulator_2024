@@ -345,6 +345,55 @@ street.enlazar(desvioabajocurva_2_2_1, calleprincipalentrada2_2)
 street.enlazar(desvioabajocurva_2_3_1, calleprincipalentrada3_1)
 street.enlazar(desvioabajocurva_2_4_1, calleprincipalentrada4_1)
 
+#INTERSECCION 2
+#calle interna
+desvioarribacurva_1_1_1 = street.insertar_curva(INTERSECTION_TURN_2_1, calleprincipalentrada2_1)
+desvioarribacurva_1_2_1 = street.insertar_curva(INTERSECTION_TURN_2_1, calleprincipalentrada2_1)
+desvioarribacurva_1_3_1 = street.insertar_curva(INTERSECTION_TURN_3_1, calleprincipalentrada3_2)
+desvioarribacurva_1_4_1 = street.insertar_curva(INTERSECTION_TURN_4_1, calleprincipalentrada4_2)
+
+desvioarribarecta_1_1_1 = street.insertar(ENTRANCE_TRAMO_4_1, 1, [desvioarribacurva_1_1_1, desvioarribacurva_1_2_1, desvioarribacurva_1_3_1, desvioarribacurva_1_4_1])
+desvioarribacurva_1_1_2 = street.insertar_curva(ENTRANCE_TURN_3_1, desvioarribarecta_1_1_1)
+
+desvioarribarecta_1_1_2 = street.insertar(ENTRANCE_LONG_TRAMO_3, 1, [desvioarribacurva_1_1_2])
+desvioarribacurva_1_1_3 = street.insertar_curva(ENTRANCE_TURN_4_1, desvioarribarecta_1_1_2)
+
+desvioarribarecta_1_1_3 = street.insertar(ENTRANCE_TRAMO_3_2, 1, [desvioarribacurva_1_1_3])
+
+desvioarribacurva_1_1_4 = street.insertar_curva(INTERSECTION_TURN_4_7, desvioarribarecta_1_1_3)
+desvioarribacurva_1_2_4 = street.insertar_curva(INTERSECTION_TURN_3_7, desvioarribarecta_1_1_3)
+desvioarribacurva_1_3_4 = street.insertar_curva(INTERSECTION_TURN_2_7, desvioarribarecta_1_1_3)
+desvioarribacurva_1_4_4 = street.insertar_curva(INTERSECTION_TURN_1_7, desvioarribarecta_1_1_3)
+
+street.enlazar(desvioarribacurva_1_1_4, calleprincipalentrada1_5)
+street.enlazar(desvioarribacurva_1_2_4, calleprincipalentrada2_5)
+street.enlazar(desvioarribacurva_1_3_4, calleprincipalentrada3_4)
+street.enlazar(desvioarribacurva_1_4_4, calleprincipalentrada4_4)
+
+#calle externa
+desvioarribacurva_2_1_4 = street.insertar_curva(INTERSECTION_TURN_1_6, calleprincipalentrada1_2)
+desvioarribacurva_2_2_4 = street.insertar_curva(INTERSECTION_TURN_2_6, calleprincipalentrada2_2)
+desvioarribacurva_2_3_4 = street.insertar_curva(INTERSECTION_TURN_3_6, calleprincipalentrada3_3)
+desvioarribacurva_2_4_4 = street.insertar_curva(INTERSECTION_TURN_4_6, calleprincipalentrada4_3)
+
+desvioarribarecta_2_1_3 = street.insertar(ENTRANCE_TRAMO_3_1, 1, [desvioarribacurva_2_1_4, desvioarribacurva_2_2_4, desvioarribacurva_2_3_4, desvioarribacurva_2_4_4])
+desvioarribacurva_2_1_3 = street.insertar_curva(ENTRANCE_TURN_3_2, desvioarribarecta_2_1_3)
+
+desvioarribarecta_2_1_2 = street.insertar(ENTRANCE_LONG_TRAMO_4, 1, [desvioarribacurva_2_1_3])
+desvioarribacurva_2_1_2 = street.insertar_curva(ENTRANCE_TURN_4_2, desvioarribarecta_2_1_2)
+
+desvioarribarecta_2_1_1 = street.insertar(ENTRANCE_TRAMO_4_2, 1, [desvioarribacurva_2_1_2])
+
+desvioarribacurva_2_1_1 = street.insertar_curva(INTERSECTION_TURN_1_8, desvioarribarecta_2_1_1)
+desvioarribacurva_2_2_1 = street.insertar_curva(INTERSECTION_TURN_2_8, desvioarribarecta_2_1_1)
+desvioarribacurva_2_3_1 = street.insertar_curva(INTERSECTION_TURN_3_8, desvioarribarecta_2_1_1)
+desvioarribacurva_2_4_1 = street.insertar_curva(INTERSECTION_TURN_4_8, desvioarribarecta_2_1_1)
+
+street.enlazar(desvioarribacurva_2_1_1, calleprincipalentrada1_3,)
+street.enlazar(desvioarribacurva_2_2_1, calleprincipalentrada2_3,)
+street.enlazar(desvioarribacurva_2_3_1, calleprincipalentrada3_2,)
+street.enlazar(desvioarribacurva_2_4_1, calleprincipalentrada4_2,)
+
 #desvioarribacurva / desvioarribarecta
 #curvaentrada1 = street.insertar_curva(INTERSECTION_TURN_1_1, 1, [calleprincipalentrada1])
 #curvaentrada2 = street.insertar_curva(INTERSECTION_TURN_2_1, 1, [calleprincipalentrada2])
@@ -369,7 +418,7 @@ sim.create_roads([
 #   ROAD_MAIN_4_4,#15
 #   ROAD_MAIN_1_5,#16
 #   ROAD_MAIN_2_5,#17
-#   ROAD_MAIN_3_5,#18
+#   ROAD_MAIN_3_5,#18_cu
 #   ROAD_MAIN_4_5,#19
 #   ENTRANCE_TRAMO_1_1,#20
 #   ENTRANCE_TRAMO_2_1,#21

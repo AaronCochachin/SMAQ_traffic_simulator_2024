@@ -26,7 +26,7 @@ class Road:
     def traffic_signal_state(self):
         if self.has_traffic_signal:
             i = self.traffic_signal_group
-            return self.traffic_signal.current_cycle[i]
+            return self.traffic_signal.status
         return True
 
     def update(self, dt):

@@ -15,7 +15,7 @@ main_hight_distance = 80
 
 NUM_OF_ROADS = 36
 VEHICLE_RATE = 100
-STEPS_PER_UPDATE = 2
+STEPS_PER_UPDATE = 1
 
 MAIN_ROAD_INIT = (-300, 300)
 MAIN_ROAD_END = (300, -300)
@@ -505,8 +505,9 @@ sim.create_gen({
     #[2, {'path': [calleprincipalentrada2_1.index_route, intersecciontecta2_1.index_route, calleprincipalentrada2_2.index_route, intersecciontecta2_2.index_route, calleprincipalentrada2_3.index_route, intersecciontecta2_3.index_route, calleprincipalentrada2_4.index_route, intersecciontecta2_4.index_route, calleprincipalentrada2_5.index_route]}]
 ]})
 
+sim.create_signal([[calleprincipalentrada1_1.index_route], [calleprincipalentrada1_2.index_route], [calleprincipalentrada1_3.index_route], [calleprincipalentrada1_4.index_route], [calleprincipalentrada1_5.index_route]], {'times': [2, 3]})
 """
-sim.create_signal([[0], [1], [2], [3]])
+sim.create_signal([[calleprincipalentrada1_2.index_route]])
 sim.create_signal([[12], [13], [14], [15]])
 
 # Create Green Light for 3rd Lane

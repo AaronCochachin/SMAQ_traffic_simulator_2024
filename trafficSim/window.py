@@ -286,7 +286,7 @@ class Window:
     def draw_signals(self):
         for signal in self.sim.traffic_signals:
             for i in range(len(signal.roads)):
-                color = (0, 255, 0) if signal.current_cycle[i] else (255, 0, 0)
+                color = (0, 255, 0) if signal.status else (255, 0, 0)
                 for road in signal.roads[i]:
                     a = 0
                     position = (

@@ -80,6 +80,7 @@ class Simulation:
                     # Add it to the next road
                     next_road_index = vehicle.path[vehicle.current_road_index]
                     new_vehicle.update_node(vehicle.node.siguiente_nodo(next_road_index))
+                    new_vehicle.waitingCycles = 0
                     #print(new_vehicle.node.index_route)
                     #print(new_vehicle.node.id)
                     self.roads[next_road_index].vehicles.append(new_vehicle)

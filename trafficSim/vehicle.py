@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 class Vehicle:
     def __init__(self, config={}):
@@ -22,6 +23,11 @@ class Vehicle:
         # bus: 0.05
         # motorcycle: 0.7
         self.vehicleType = np.random.choice(vehicleTypes, p=[0.3, 0.1, 0.1, 0.5])
+
+        self.cyclesToWait = 5 #random.randint(3, 4) TODO REGRESAR A RANDOM
+        self.waitingCycles = 0
+        self.previous_state = None
+
         if(self.vehicleType == "car"):
             self.l = 3
             self.h = 2

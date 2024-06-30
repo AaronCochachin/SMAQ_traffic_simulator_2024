@@ -40,19 +40,38 @@ class Road:
                 lead = self.vehicles[i-1]
                 self.vehicles[i].update(lead, dt)
 
-             # Check for traffic signal
+            #if(n > 0 and (self.start == (-300,300) and self.end == (-220,220))):
+                #print('road:',self.start, self.end,'distance',self.length,'vehicles:', n, self.vehicles)
+                #print(self.vehicles[0].waitingCycles, self.vehicles[1].waitingCycles, self.vehicles[2].waitingCycles)
+                #print(self.vehicles[0].cyclesToWait, self.vehicles[0].waitingCycles, self.vehicles[0].previous_state)
+
+            if(self.traffic_signal_state != self.vehicles[0].previous_state):
+                self.vehicles[0].previous_state = self.traffic_signal_state
+                if(self.traffic_signal_state):
+                    for vehicle in self.vehicles:
+                        vehicle.waitingCycles += 1
+
             if self.traffic_signal_state:
                 # If traffic signal is green or doesn't exist
                 # Then let vehicles pass
-                self.vehicles[0].unstop()
-                for vehicle in self.vehicles:
-                    vehicle.unslow()
+
+                if(self.vehicles[0].waitingCycles >= self.vehicles[0].cyclesToWait):
+                    self.vehicles[0].unstop()
+                    for vehicle in self.vehicles:
+                        vehicle.unslow()
+                else:
+                    if self.has_traffic_signal:
+                        self.updateRedSigal()
             else:
-                # If traffic signal is red
-                if self.vehicles[0].x >= self.length - self.traffic_signal.slow_distance:
-                    # Slow vehicles in slowing zone
-                    self.vehicles[0].slow(self.traffic_signal.slow_factor*self.vehicles[0]._v_max)
-                if self.vehicles[0].x >= self.length - self.traffic_signal.stop_distance and\
-                   self.vehicles[0].x <= self.length - self.traffic_signal.stop_distance / 2:
-                    # Stop vehicles in the stop zone
-                    self.vehicles[0].stop()
+                self.updateRedSigal()
+                
+
+    def updateRedSigal(self):
+        # If traffic signal is red
+        if self.vehicles[0].x >= self.length - self.traffic_signal.slow_distance:
+            # Slow vehicles in slowing zone
+            self.vehicles[0].slow(self.traffic_signal.slow_factor*self.vehicles[0]._v_max)
+        if self.vehicles[0].x >= self.length - self.traffic_signal.stop_distance and\
+            self.vehicles[0].x <= self.length - self.traffic_signal.stop_distance / 2:
+            # Stop vehicles in the stop zone
+            self.vehicles[0].stop()

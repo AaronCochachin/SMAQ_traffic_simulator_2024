@@ -78,6 +78,8 @@ class Simulation:
                     new_vehicle = deepcopy(vehicle)
                     new_vehicle.x = 0
                     # Add it to the next road
+                    #matrix = vehicle.node.getMatrix()
+                    #next_road = keras.mimodelo(matrix)
                     next_road_index = vehicle.path[vehicle.current_road_index]
                     new_vehicle.update_node(vehicle.node.siguiente_nodo(next_road_index))
                     new_vehicle.waitingCycles = 0

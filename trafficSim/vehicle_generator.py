@@ -46,6 +46,7 @@ class VehicleGenerator:
                 self.upcoming_vehicle.time_added = self.sim.t
                 road.vehicles.append(self.upcoming_vehicle)
                 self.upcoming_vehicle.update_node(self.sim.routes_tree.buscar_nodo_por_index_route(self.upcoming_vehicle.path[0]))
+                self.upcoming_vehicle.node.quantity_vehicles += 1
                 #print(self.upcoming_vehicle.node.index_route)
                 #print(self.upcoming_vehicle.node.id)
                 # Reset last_added_time and upcoming_vehicle

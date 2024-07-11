@@ -81,7 +81,16 @@ class Simulation:
                     #matrix = vehicle.node.getMatrix()
                     #next_road = keras.mimodelo(matrix)
                     next_road_index = vehicle.path[vehicle.current_road_index]
+                    #cuantificar cantidad de vehiculos
+                    if new_vehicle.node.index_route == 0:
+                        print(str(new_vehicle.node.quantity_vehicles) + ' - ' + str(new_vehicle.node.index_route))
+                    new_vehicle.node.quantity_vehicles -= 1
+                    
                     new_vehicle.update_node(vehicle.node.siguiente_nodo(next_road_index))
+                    new_vehicle.node.quantity_vehicles += 1
+                    if new_vehicle.node.index_route == 2:
+                        print(str(new_vehicle.node.quantity_vehicles) + ' - ' + str(new_vehicle.node.index_route))
+                    #fin cuantificar cantidad de vehiculos
                     new_vehicle.waitingCycles = 0
                     #print(new_vehicle.node.index_route)
                     #print(new_vehicle.node.id)

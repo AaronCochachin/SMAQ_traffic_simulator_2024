@@ -102,13 +102,16 @@ class Simulation:
                     road.vehicles.popleft() 
                 elif vehicle.type_routes == 1:
                     print('routa inicio fin')
-                    if vehicle.path != vehicle.node.index_route:
+                    if vehicle.path[1] != vehicle.node.index_route:
+                        next_road_index = vehicle.node.random_nodo()
+                        print('next_road_index', next_road_index)
                         new_vehicle = deepcopy(vehicle)
+                        new_vehicle.x = 0
                         if new_vehicle.node.index_route == 0:
                             print(str(new_vehicle.node.quantity_vehicles) + ' - ' + str(new_vehicle.node.index_route))
                         new_vehicle.node.quantity_vehicles -= 1
                         
-                        new_vehicle.update_node(vehicle.node.random_nodo())
+                        new_vehicle.update_node(vehicle.node.siguiente_nodo(next_road_index))
                         new_vehicle.node.quantity_vehicles += 1
                         if new_vehicle.node.index_route == 2:
                             print(str(new_vehicle.node.quantity_vehicles) + ' - ' + str(new_vehicle.node.index_route))
@@ -116,9 +119,11 @@ class Simulation:
                         new_vehicle.waitingCycles = 0
                         #print(new_vehicle.node.index_route)
                         #print(new_vehicle.node.id)
-                        self.roads[new_vehicle.node.index_route].vehicles.append(new_vehicle)
+                        print('new_vehicle.node.index_route', new_vehicle.node.index_route, new_vehicle.node.type)
+                        self.roads[next_road_index].vehicles.append(new_vehicle)
                     else:
                         Simulation.vehiclesPassed += 1
+                    road.vehicles.popleft() 
                     #ramdon next nodos
                 # if vehicle reached the end of the path
                 # if vehicle.current_road_index + 1 == len(vehicle.path):

@@ -20,11 +20,13 @@ class NodoN:
                 return enlace
         return None
     def random_nodo(self):
-        print('enlaces', self.enlaces)
+        #for enlace in self.enlaces:
+            #print('enlaces', enlace.index_route)
         if(len(self.enlaces) > 0):
+            nodo = self.enlaces[-1]
+            #print('id', nodo.index_route)
             nodo = np.random.choice(self.enlaces)
-            print('id', nodo.id)
-            return nodo
+            return nodo.index_route
         else:
             return None
         

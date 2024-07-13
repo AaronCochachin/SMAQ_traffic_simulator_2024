@@ -347,28 +347,28 @@ street.enlazar(desvioabajocurva_2_4_1, calleprincipalentrada4_1)
 
 #INTERSECCION 2
 #calle interna
-desvioarribacurva_1_1_1 = street.insertar_curva(INTERSECTION_TURN_2_1, calleprincipalentrada2_1)
-desvioarribacurva_1_2_1 = street.insertar_curva(INTERSECTION_TURN_2_1, calleprincipalentrada2_1)
+#desvioarribacurva_1_1_1 = street.insertar_curva(INTERSECTION_TURN_2_1, calleprincipalentrada2_1)
+#desvioarribacurva_1_2_1 = street.insertar_curva(INTERSECTION_TURN_2_1, calleprincipalentrada2_1)
 desvioarribacurva_1_3_1 = street.insertar_curva(INTERSECTION_TURN_3_1, calleprincipalentrada3_2)
 desvioarribacurva_1_4_1 = street.insertar_curva(INTERSECTION_TURN_4_1, calleprincipalentrada4_2)
 
-desvioarribarecta_1_1_1 = street.insertar(ENTRANCE_TRAMO_4_1, 1, [desvioarribacurva_1_1_1, desvioarribacurva_1_2_1, desvioarribacurva_1_3_1, desvioarribacurva_1_4_1])
-desvioarribacurva_1_1_2 = street.insertar_curva(ENTRANCE_TURN_3_1, desvioarribarecta_1_1_1)
+#desvioarribarecta_1_1_1 = street.insertar(ENTRANCE_TRAMO_4_1, 1, [desvioarribacurva_1_1_1, desvioarribacurva_1_2_1, desvioarribacurva_1_3_1, desvioarribacurva_1_4_1])
+#desvioarribacurva_1_1_2 = street.insertar_curva(ENTRANCE_TURN_3_1, desvioarribarecta_1_1_1)
 
-desvioarribarecta_1_1_2 = street.insertar(ENTRANCE_LONG_TRAMO_3, 1, [desvioarribacurva_1_1_2])
-desvioarribacurva_1_1_3 = street.insertar_curva(ENTRANCE_TURN_4_1, desvioarribarecta_1_1_2)
+#desvioarribarecta_1_1_2 = street.insertar(ENTRANCE_LONG_TRAMO_3, 1, [desvioarribacurva_1_1_2])
+#desvioarribacurva_1_1_3 = street.insertar_curva(ENTRANCE_TURN_4_1, desvioarribarecta_1_1_2)
 
-desvioarribarecta_1_1_3 = street.insertar(ENTRANCE_TRAMO_3_2, 1, [desvioarribacurva_1_1_3])
+#desvioarribarecta_1_1_3 = street.insertar(ENTRANCE_TRAMO_3_2, 1, [desvioarribacurva_1_1_3])
+#
+#desvioarribacurva_1_1_4 = street.insertar_curva(INTERSECTION_TURN_4_7, desvioarribarecta_1_1_3)
+#desvioarribacurva_1_2_4 = street.insertar_curva(INTERSECTION_TURN_3_7, desvioarribarecta_1_1_3)
+#desvioarribacurva_1_3_4 = street.insertar_curva(INTERSECTION_TURN_2_7, desvioarribarecta_1_1_3)
+#desvioarribacurva_1_4_4 = street.insertar_curva(INTERSECTION_TURN_1_7, desvioarribarecta_1_1_3)
 
-desvioarribacurva_1_1_4 = street.insertar_curva(INTERSECTION_TURN_4_7, desvioarribarecta_1_1_3)
-desvioarribacurva_1_2_4 = street.insertar_curva(INTERSECTION_TURN_3_7, desvioarribarecta_1_1_3)
-desvioarribacurva_1_3_4 = street.insertar_curva(INTERSECTION_TURN_2_7, desvioarribarecta_1_1_3)
-desvioarribacurva_1_4_4 = street.insertar_curva(INTERSECTION_TURN_1_7, desvioarribarecta_1_1_3)
-
-street.enlazar(desvioarribacurva_1_1_4, calleprincipalentrada1_5)
-street.enlazar(desvioarribacurva_1_2_4, calleprincipalentrada2_5)
-street.enlazar(desvioarribacurva_1_3_4, calleprincipalentrada3_4)
-street.enlazar(desvioarribacurva_1_4_4, calleprincipalentrada4_4)
+#street.enlazar(desvioarribacurva_1_1_4, calleprincipalentrada1_5)
+#street.enlazar(desvioarribacurva_1_2_4, calleprincipalentrada2_5)
+#street.enlazar(desvioarribacurva_1_3_4, calleprincipalentrada3_4)
+#street.enlazar(desvioarribacurva_1_4_4, calleprincipalentrada4_4)
 
 #calle externa
 desvioarribacurva_2_1_4 = street.insertar_curva(INTERSECTION_TURN_1_6, calleprincipalentrada1_2)
@@ -509,7 +509,7 @@ sim.create_gen({
 'vehicle_rate': VEHICLE_RATE,
 'vehicles':[
     # 1st Lane
-    [1, {'path': [calleprincipalentrada2_1.index_route, calleprincipalentrada1_5.index_route], 'vehicleType': 'truck', 'type_routes': 1}]
+    [1, {'path': [calleprincipalentrada2_1.index_route, calleprincipalentrada1_5.index_route], 'type_routes': 1}]
     #[2, {'path': [calleprincipalentrada2_1.index_route, intersecciontecta2_1.index_route, calleprincipalentrada2_2.index_route, intersecciontecta2_2.index_route, calleprincipalentrada2_3.index_route, intersecciontecta2_3.index_route, calleprincipalentrada2_4.index_route, intersecciontecta2_4.index_route, calleprincipalentrada2_5.index_route]}]
 ]})
 sim.create_signal([[calleprincipalentrada1_1.index_route], [calleprincipalentrada1_2.index_route], [calleprincipalentrada1_3.index_route], [calleprincipalentrada1_4.index_route], [calleprincipalentrada1_5.index_route]], {'times': [2, 3]})

@@ -1,4 +1,5 @@
 from scipy.spatial import distance
+import numpy as np
 
 class NodoN:
     def __init__(self, id, position, type):
@@ -18,7 +19,15 @@ class NodoN:
             if(enlace.index_route == index_route):
                 return enlace
         return None
-    
+    def random_nodo(self):
+        print('enlaces', self.enlaces)
+        if(len(self.enlaces) > 0):
+            nodo = np.random.choice(self.enlaces)
+            print('id', nodo.id)
+            return nodo
+        else:
+            return None
+        
 class ArbolN:
     def __init__(self):
         self.raiz = None

@@ -14,7 +14,8 @@ class Vehicle:
         # Calculate properties
         self.init_properties()
 
-    def set_default_config(self):  
+    def set_default_config(self):
+        self.type_routes = 0#0 camino definido, 1 inicio=>fin
         vehicleTypes = ["car", "truck", "bus", "motorcycle"]  
         colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 165, 0), (255, 255, 0), (0, 255, 255), (255, 0, 255)]
         # self.vehicleType with the probability:

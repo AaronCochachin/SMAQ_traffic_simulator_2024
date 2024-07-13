@@ -509,7 +509,7 @@ sim.create_gen({
 'vehicle_rate': VEHICLE_RATE,
 'vehicles':[
     # 1st Lane
-    [1, {'path': [calleprincipalentrada2_1.index_route], 'vehicleType': 'truck'}]
+    [1, {'path': [calleprincipalentrada2_1.index_route, calleprincipalentrada1_5.index_route], 'vehicleType': 'truck', 'type_routes': 1}]
     #[2, {'path': [calleprincipalentrada2_1.index_route, intersecciontecta2_1.index_route, calleprincipalentrada2_2.index_route, intersecciontecta2_2.index_route, calleprincipalentrada2_3.index_route, intersecciontecta2_3.index_route, calleprincipalentrada2_4.index_route, intersecciontecta2_4.index_route, calleprincipalentrada2_5.index_route]}]
 ]})
 sim.create_signal([[calleprincipalentrada1_1.index_route], [calleprincipalentrada1_2.index_route], [calleprincipalentrada1_3.index_route], [calleprincipalentrada1_4.index_route], [calleprincipalentrada1_5.index_route]], {'times': [2, 3]})
